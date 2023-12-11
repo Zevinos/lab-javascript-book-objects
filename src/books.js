@@ -101,34 +101,22 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 // Your code here:
-function getBookDetails(book) {
-  return book.title + " - " + book.author + " - " + book.pages + " pages";
+function getBookDetails(bookObject) {
+  return `${bookObject.title} + " - " + ${bookObject.author} + " - " + ${bookObject.pages} + " pages"`;
 }
+console.log(getBookDetails(booksArray[0]));
 
 // Iteration 3 | Delete Language
 // Your code here:
-//for (const [key,function()])  {
-// delete booksArray.details.language[key];
-//}
-
-for (var i = 0; i < booksArray.length; i++) {
-  delete booksArray[i].details.language;
+for (const book of booksArray) {
+  delete book.details.language;
+  const estimatedTime = (book.pages * 500) / 90; /*iteration 4 */
+  book.readingTime = Math.ceil(estimatedTime);
 }
-
 console.log(booksArray);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-for (const i = 0; i < booksArray.length; i++) {
-  const totalPages = booksArray[i].pages;
-  const wordsPerPage = 500;
-  const wordsPerMinute = 90;
-
-  const readingTime = Math.round((totalPages * wordsPerPage) / wordsPerMinute);
-
-  booksArray[i].readingTime = readingTime;
-}
-console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
